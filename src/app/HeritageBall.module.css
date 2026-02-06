@@ -1,0 +1,400 @@
+/* =========================================================
+   ROYAL BLOODLINES — FULL PAGE STYLESHEET
+   Heritage Ball • Vol. I
+   ========================================================= */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --royal-fuchsia: #d946ef;
+  --royal-blue: #2563eb;
+  --royal-gold: #f5c77a;
+  --ink-black: #000;
+  --soft-white: #fff;
+  --muted-gray: #9ca3af;
+}
+
+/* ---------- Global Reset & Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--ink-black);
+  color: var(--soft-white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background-color: var(--royal-fuchsia);
+  color: #fff;
+}
+
+/* ---------- Wrapper ---------- */
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ---------- Ambient Blobs ---------- */
+.blobContainer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blobFuchsia,
+.blobBlue {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  filter: blur(140px);
+}
+
+.blobFuchsia {
+  top: -15%;
+  left: -15%;
+  background: rgba(217, 70, 239, 0.25);
+}
+
+.blobBlue {
+  bottom: -15%;
+  right: -15%;
+  background: rgba(37, 99, 235, 0.25);
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.logoIcon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background: linear-gradient(135deg, var(--royal-fuchsia), var(--royal-blue));
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-style: italic;
+  color: #000;
+}
+
+.logoText {
+  font-size: 1.25rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.05em;
+}
+
+.logoText span {
+  color: var(--royal-blue);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6rem;
+  position: relative;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.heroBadges {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.badge {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-family: monospace;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.badgePink {
+  color: var(--royal-fuchsia);
+}
+
+.badgeBlue {
+  color: #93c5fd;
+}
+
+/* ---------- Hero Title ---------- */
+.heroTitleContainer {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.heroTitleMain {
+  font-size: 4.5rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  text-shadow:
+    0 0 20px rgba(217, 70, 239, 0.25),
+    0 0 60px rgba(37, 99, 235, 0.15);
+}
+
+.heroTitleGlitch {
+  position: absolute;
+  inset: 0;
+  font-size: 4.5rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.06em;
+  background: linear-gradient(90deg, var(--royal-fuchsia), var(--royal-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.35;
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+/* ---------- Hero Subtitle ---------- */
+.heroSubtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #fff, #6b7280);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 3rem;
+}
+
+.highlightPink {
+  background: var(--royal-fuchsia);
+  padding: 0 0.4rem;
+  color: #fff;
+}
+
+.highlightBlue {
+  background: var(--royal-blue);
+  padding: 0 0.4rem;
+  color: #fff;
+}
+
+/* ---------- Info Grid ---------- */
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.infoCard {
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 60%),
+    rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoLabel {
+  font-size: 0.7rem;
+  font-family: monospace;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted-gray);
+}
+
+.infoValue {
+  font-weight: 700;
+}
+
+/* ---------- CTA ---------- */
+.ctaButton {
+  margin-top: 3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.25rem;
+  background: #fff;
+  color: #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: var(--royal-fuchsia);
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+.ctaButton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.ctaButton:hover::after {
+  transform: translateX(100%);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 8rem 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+.sectionTitle span {
+  color: var(--royal-fuchsia);
+}
+
+/* ---------- Category Detail ---------- */
+.categoryDetail {
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 60%),
+    linear-gradient(to bottom right, #111827, #000);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 2.5rem;
+  min-height: 420px;
+  position: relative;
+}
+
+.prizeTag {
+  background: var(--royal-gold);
+  color: #000;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.themeTitle {
+  font-size: 2.25rem;
+  font-weight: 900;
+  font-style: italic;
+  background: linear-gradient(to right, #fff, #9ca3af);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.divider {
+  width: 6rem;
+  height: 4px;
+  background: var(--royal-gold);
+  margin: 2rem 0;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #d1d5db;
+  max-width: 32rem;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: 3.5rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+
+.footerTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.footerTitle span {
+  color: var(--royal-blue);
+}
+
+.footerCredit {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  color: #52525b;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 768px) {
+  .heroTitleMain,
+  .heroTitleGlitch {
+    font-size: 8rem;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 4.5rem;
+  }
+}
+
+/* ---------- Animations ---------- */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
